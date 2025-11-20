@@ -18,6 +18,7 @@ ReadmeForge is a client-side React application that generates professional READM
 ## 🏗 Architecture
 
 ### Frontend Stack
+
 - **React.js** (Vite SPA)
 - **TypeScript** (Type-safe development)
 - **Tailwind CSS** (Utility-first styling)
@@ -25,11 +26,14 @@ ReadmeForge is a client-side React application that generates professional READM
 - **react-markdown** (Markdown preview)
 
 ### Data Layer
+
 - **GitHub REST API v3** (Direct browser communication)
 - **Personal Access Token (PAT)** authentication flow
 
 ### Core Philosophy
+
 ReadmeForge operates on a **Heuristic Analysis** model. It does not parse code content; instead, it looks for specific structural signatures (file names, extensions, metadata) to infer:
+
 - Technology stack
 - Installation commands
 - Run commands
@@ -38,6 +42,7 @@ ReadmeForge operates on a **Heuristic Analysis** model. It does not parse code c
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - Node.js >= 18
 - npm or pnpm
 - A GitHub account
@@ -68,13 +73,17 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 ## 📖 Usage Flow
 
 ### Phase 1: Authentication
+
 Paste your GitHub Personal Access Token. The app will validate it and fetch your user profile.
 
 ### Phase 2: Repository Selection
+
 Browse your repositories in a searchable grid. Click "Generate README" on any project.
 
 ### Phase 3: Analysis
+
 Watch the terminal log as ReadmeForge:
+
 - Fetches repository metadata
 - Lists contributors
 - Analyzes languages
@@ -82,24 +91,25 @@ Watch the terminal log as ReadmeForge:
 - Runs heuristic inference
 
 ### Phase 4: Edit & Export
+
 Review the generated Markdown in a split-pane editor. Make edits and copy the final README to paste into your repository.
 
 ## 🧠 Heuristic Rules
 
 ReadmeForge uses the following file signatures to infer project type:
 
-| File | Stack | Install | Run |
-|------|-------|---------|-----|
-| `package.json` | Node.js | `npm install` | `npm run dev` |
-| `yarn.lock` | Node.js (Yarn) | `yarn install` | `yarn dev` |
-| `pnpm-lock.yaml` | Node.js (pnpm) | `pnpm install` | `pnpm dev` |
-| `requirements.txt` | Python | `pip install -r requirements.txt` | `python main.py` |
-| `Pipfile` | Python (Pipenv) | `pipenv install` | `pipenv run python main.py` |
-| `Cargo.toml` | Rust | `cargo build` | `cargo run` |
-| `pom.xml` | Java (Maven) | `mvn install` | `mvn spring-boot:run` |
-| `build.gradle` | Java (Gradle) | `./gradlew build` | `./gradlew bootRun` |
-| `go.mod` | Go | `go mod download` | `go run main.go` |
-| `composer.json` | PHP | `composer install` | `php artisan serve` |
+| File               | Stack           | Install                           | Run                         |
+| ------------------ | --------------- | --------------------------------- | --------------------------- |
+| `package.json`     | Node.js         | `npm install`                     | `npm run dev`               |
+| `yarn.lock`        | Node.js (Yarn)  | `yarn install`                    | `yarn dev`                  |
+| `pnpm-lock.yaml`   | Node.js (pnpm)  | `pnpm install`                    | `pnpm dev`                  |
+| `requirements.txt` | Python          | `pip install -r requirements.txt` | `python main.py`            |
+| `Pipfile`          | Python (Pipenv) | `pipenv install`                  | `pipenv run python main.py` |
+| `Cargo.toml`       | Rust            | `cargo build`                     | `cargo run`                 |
+| `pom.xml`          | Java (Maven)    | `mvn install`                     | `mvn spring-boot:run`       |
+| `build.gradle`     | Java (Gradle)   | `./gradlew build`                 | `./gradlew bootRun`         |
+| `go.mod`           | Go              | `go mod download`                 | `go run main.go`            |
+| `composer.json`    | PHP             | `composer install`                | `php artisan serve`         |
 
 ## 🗺 Roadmap
 
@@ -115,6 +125,7 @@ Future enhancements under consideration:
 ## 🤝 Contributing
 
 Contributions are welcome! Please:
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
@@ -136,7 +147,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **Built with ❤️ using React + TypeScript + Tailwind CSS**
 
-
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -154,9 +164,9 @@ If you are developing a production application, we recommend updating the config
 
 ```js
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       // Other configs...
 
@@ -171,40 +181,40 @@ export default defineConfig([
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...
     },
   },
-])
+]);
 ```
 
 You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
 ```js
 // eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+import reactX from "eslint-plugin-react-x";
+import reactDom from "eslint-plugin-react-dom";
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(["dist"]),
   {
-    files: ['**/*.{ts,tsx}'],
+    files: ["**/*.{ts,tsx}"],
     extends: [
       // Other configs...
       // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
+      reactX.configs["recommended-typescript"],
       // Enable lint rules for React DOM
       reactDom.configs.recommended,
     ],
     languageOptions: {
       parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
       // other options...
     },
   },
-])
+]);
 ```
