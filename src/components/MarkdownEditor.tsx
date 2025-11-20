@@ -68,13 +68,11 @@ export function MarkdownEditor({ value, onChange }: MarkdownEditorProps) {
         <div className="mb-3 flex items-center gap-2 text-xs uppercase tracking-[0.3em] text-slate-500">
           <Eye className="size-3" /> Live preview
         </div>
-        <ReactMarkdown
-          className="prose prose-slate max-w-none"
-          remarkPlugins={[remarkGfm]}
-          rehypePlugins={rehypePlugins}
-        >
-          {value}
-        </ReactMarkdown>
+        <div className="prose prose-slate max-w-none">
+          <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={rehypePlugins}>
+            {value}
+          </ReactMarkdown>
+        </div>
       </div>
     </section>
   )
